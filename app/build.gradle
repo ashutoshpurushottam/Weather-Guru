@@ -6,6 +6,10 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 
+def apiKeyPropertiesFile = rootProject.file("apikey.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -18,6 +22,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Key from local file
+        buildConfigField("String", "OWM_KEY", apiKeyProperties['OWM_KEY'])
     }
 
     buildTypes {
@@ -50,6 +57,8 @@ dependencies {
     // Navigation component
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     testImplementation 'junit:junit:4.+'

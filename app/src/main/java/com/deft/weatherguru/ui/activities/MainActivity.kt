@@ -6,9 +6,11 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.deft.weatherguru.BuildConfig
 import com.deft.weatherguru.R
 import com.deft.weatherguru.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setupWithNavController(navController)
         // action bar clicks
         NavigationUI.setupActionBarWithNavController(this, navController)
+
+        // Check if OWM_KEY can be obtained
+        Timber.d(BuildConfig.OWM_KEY)
     }
 
     // Behaviour on clicking the up button

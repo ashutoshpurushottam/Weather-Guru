@@ -3,6 +3,9 @@ buildscript {
     ext.kotlin_version = "1.4.32"
     ext.nav_version = "2.3.5"
     ext.timber_version = '5.0.1'
+    ext.gson_version = '2.8.8'
+    ext.retrofit_version = '2.9.0'
+    ext.coroutine_version = '1.4.3'
 
     repositories {
         google()

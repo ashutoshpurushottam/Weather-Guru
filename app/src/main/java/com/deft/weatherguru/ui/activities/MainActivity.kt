@@ -12,6 +12,8 @@ import com.deft.weatherguru.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
+
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
